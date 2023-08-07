@@ -1,1 +1,1 @@
-# Library-Management-System
+Welcome to the repository for my Library Management System project developed using ASP.NET (C#). This project focuses on efficiently managing library operations and services. I've utilized a variety of technologies, including Microsoft SQL Server for the database and HTML, CSS, and Bootstrap for the user interface.
