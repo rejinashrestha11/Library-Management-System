@@ -1,0 +1,63 @@
+﻿@model IEnumerable<CentralLibrary.Models.Publication>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-dark">Create New</a>
+</p>
+<form>
+    <p>
+        <input type="search" placeholder="Enter Publication Name" value="@ViewData["GetPublicationDetails"]"
+               name="PublicationSearch" style="width: 400px;" />
+        <input type="submit" value="Search" class="btn btn-success" />
+    </p>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            
+            <th>
+                @Html.DisplayNameFor(model => model.PublicationName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Contact_No)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.PublicationName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Contact_No)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Publication_id }, new { @class = "btn btn-success" }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Publication_id }, new { @class = "btn btn-primary" }) |
+                <a class="btn btn-danger" asp-action="delete" asp-route-id="@item.Publication_id" onclick="return confirm('Do you really want to delete this record?')" ;>Delete</a>
+
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

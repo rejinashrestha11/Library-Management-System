@@ -1,0 +1,63 @@
+﻿@model IEnumerable<CentralLibrary.Models.LibraryStaff>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Library Staff Index</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-dark">Add New Library Staff</a>
+</p>
+<form>
+    <p>
+        <input type="search" placeholder="Enter Library Staff" value="@ViewData["GetBookDetails"]"
+               name="StaffSearch" style="width: 400px;" />
+        <input type="submit" value="Search" class="btn btn-success" />
+    </p>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+
+            <th>
+                @Html.DisplayNameFor(model => model.StaffName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Contact_No)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Department)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+             
+                <td>
+                    @Html.DisplayFor(modelItem => item.StaffName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.address)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Contact_No)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Department)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Staff_id }, new { @class = "btn btn-success" }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.Staff_id }, new { @class = "btn btn-primary" }) |
+                    <a class="btn btn-danger" asp-action="delete" asp-route-id="@item.Staff_id" onclick="return confirm('Do you really want to delete this record?')" ;>Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

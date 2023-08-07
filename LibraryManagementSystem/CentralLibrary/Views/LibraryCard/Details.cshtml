@@ -1,0 +1,64 @@
+﻿@model CentralLibrary.Models.LibraryCard
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Library Card Details</h1>
+<hr />
+
+<div class="row">
+    <div class="col-md-6">
+        <dl class="row">
+            <dt class="col-sm-6">
+                @Html.DisplayNameFor(model => model.Card_id)
+            </dt>
+            <dd class="col-sm-6">
+                @Html.DisplayFor(model => model.Card_id)
+            </dd>
+            <dt class="col-sm-6">
+                @Html.DisplayNameFor(model => model.FullName)
+            </dt>
+            <dd class="col-sm-6">
+                @Html.DisplayFor(model => model.FullName)
+            </dd>
+            <dt class="col-sm-6">
+                @Html.DisplayNameFor(model => model.Faculty)
+            </dt>
+            <dd class="col-sm-6">
+                @Html.DisplayFor(model => model.Faculty)
+            </dd>
+            <dt class="col-sm-6">
+                @Html.DisplayNameFor(model => model.Contact_No)
+            </dt>
+            <dd class="col-sm-6">
+                @Html.DisplayFor(model => model.Contact_No)
+            </dd>
+            <dt class="col-sm-6">
+                @Html.DisplayNameFor(model => model.DOB)
+            </dt>
+            <dd class="col-sm-6">
+                @Html.DisplayFor(model => model.DOB)
+            </dd>
+            <dt class="col-sm-6">
+                @Html.DisplayNameFor(model => model.Issued_date)
+            </dt>
+            <dd class="col-sm-6">
+                @Html.DisplayFor(model => model.Issued_date)
+            </dd>
+            <dt class="col-sm-6">
+                @Html.DisplayNameFor(model => model.Expire_date)
+            </dt>
+            <dd class="col-sm-6">
+                @Html.DisplayFor(model => model.Expire_date)
+            </dd>
+        </dl>
+    </div>
+    <div class="col-md-6">
+        <img src="https://www.kuder.com/webres/Image/blog/Apr21_Libraries-Header(1).jpg" style="border-radius : 10px; width: 100%; height: auto;" />
+    </div>
+    <div>
+        @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+        <a asp-action="Index">Back to List</a>
+    </div>
+    </div>

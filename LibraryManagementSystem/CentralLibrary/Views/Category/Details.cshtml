@@ -1,0 +1,35 @@
+﻿@model CentralLibrary.Models.Category
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Category Details</h1>
+<hr />
+
+<div class="row">
+    <div class="col-md-6">
+
+        <dl class="row">
+            <dt class="col-sm-6">
+                @Html.DisplayNameFor(model => model.Category_id)
+            </dt>
+            <dd class="col-sm-6">
+                @Html.DisplayFor(model => model.Category_id)
+            </dd>
+            <dt class="col-sm-6">
+                @Html.DisplayNameFor(model => model.CategoryName)
+            </dt>
+            <dd class="col-sm-6">
+                @Html.DisplayFor(model => model.CategoryName)
+            </dd>
+        </dl>
+    </div>
+    <div class="col-md-6">
+        <img src="https://cdn.shopify.com/s/files/1/0399/4664/9758/products/simply-spaced-clear-the-clutter-and-style-your-life-book-books-quarto-967866.jpg?v=1644505570" style="border-radius : 10px; width: 100%; height: auto;" />
+    </div>
+    <div>
+        @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+        <a asp-action="Index">Back to List</a>
+    </div>
+    </div>

@@ -1,0 +1,57 @@
+﻿@model CentralLibrary.Models.Fine
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Fine</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="Book_id" class="control-label"></label>
+                <input asp-for="Book_id" class="form-control" />
+                <span asp-validation-for="Book_id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Card_id" class="control-label"></label>
+                <input asp-for="Card_id" class="form-control" />
+                <span asp-validation-for="Card_id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Taken_date" class="control-label"></label>
+                <input asp-for="Taken_date" class="form-control" />
+                <span asp-validation-for="Taken_date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Return_date" class="control-label"></label>
+                <input asp-for="Return_date" class="form-control" />
+                <span asp-validation-for="Return_date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Fine_amount" class="control-label"></label>
+                <input asp-for="Fine_amount" class="form-control" />
+                <span asp-validation-for="Fine_amount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+    <div class="col-md-4">
+        <img src="https://www.ebsco.com/sites/g/files/nabnos191/files/acquiadam-assets/library-fines-overdue-debate-blog-image-780.jpg" />
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

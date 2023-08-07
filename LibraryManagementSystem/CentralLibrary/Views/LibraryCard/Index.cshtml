@@ -1,0 +1,74 @@
+﻿@model IEnumerable<CentralLibrary.Models.LibraryCard>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-dark">Add New Library Card Details</a>
+</p>
+<form>
+    <p>
+        <input type="search" placeholder="Enter Full Name" value="@ViewData["GetLibraryCardDetails"]"
+               name="LibraryCardSearch" style="width: 400px;" />
+        <input type="submit" value="Search" class="btn btn-success" />
+    </p>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+
+            <th>
+                @Html.DisplayNameFor(model => model.FullName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Faculty)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Contact_No)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DOB)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Issued_date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Expire_date)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FullName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Faculty)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Contact_No)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DOB)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Issued_date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Expire_date)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Card_id }, new { @class = "btn btn-success" }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.Card_id }, new { @class = "btn btn-primary" }) |
+                    <a class="btn btn-danger" asp-action="delete" asp-route-id="@item.Card_id" onclick="return confirm('Do you really want to delete this record?')" ;>Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

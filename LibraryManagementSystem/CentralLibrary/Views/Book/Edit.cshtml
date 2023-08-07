@@ -1,0 +1,54 @@
+﻿@model CentralLibrary.Models.Book
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit Book Details</h1>
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Book_id" class="control-label"></label>
+                <input asp-for="Book_id" class="form-control" />
+                <span asp-validation-for="Book_id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BookName" class="control-label"></label>
+                <input asp-for="BookName" class="form-control" />
+                <span asp-validation-for="BookName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ISBN_NO" class="control-label"></label>
+                <input asp-for="ISBN_NO" class="form-control" />
+                <span asp-validation-for="ISBN_NO" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="publish_year" class="control-label"></label>
+                <input asp-for="publish_year" class="form-control" />
+                <span asp-validation-for="publish_year" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="author" class="control-label"></label>
+                <input asp-for="author" class="form-control" />
+                <span asp-validation-for="author" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+    <div class="col-md-6">
+        <img src="https://s28151.pcdn.co/library/wp-content/uploads/sites/88/2020/11/goddard-library-renew-a-book.jpg" />
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

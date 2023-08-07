@@ -1,0 +1,53 @@
+﻿@model IEnumerable<CentralLibrary.Models.Category>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<style>
+    body {
+        background-image: url('../images/library.jpg');
+    }
+</style>
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-dark">Create New</a>
+</p>
+<form>
+    <p>
+        <input type="search" placeholder="Enter Category Name" value="@ViewData["GetCategoryDetails"]"
+               name="CategorySearch" style="width: 400px;" />
+        <input type="submit" value="Search" class="btn btn-success" />
+    </p>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Category_id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CategoryName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category_id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CategoryName)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Category_id }, new { @class = "btn btn-success" }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Category_id }, new { @class = "btn btn-primary" }) |
+                <a class="btn btn-danger" asp-action="delete" asp-route-id="@item.Category_id" onclick="return confirm('Do you really want to delete this record?')" ;>Delete</a>
+
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,57 @@
+﻿@model CentralLibrary.Models.Book
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Book Details</h1>
+<hr />
+
+<div class="row">
+    <div class="col-md-6">
+
+        <dl class="row">
+            <dt class="col-sm-6">
+                @Html.DisplayNameFor(model => model.Book_id)
+            </dt>
+            <dd class="col-sm-6">
+                @Html.DisplayFor(model => model.Book_id)
+            </dd>
+            <dt class="col-sm-6">
+                @Html.DisplayNameFor(model => model.BookName)
+            </dt>
+            <dd class="col-sm-6">
+                @Html.DisplayFor(model => model.BookName)
+            </dd>
+            <dt class="col-sm-6">
+                @Html.DisplayNameFor(model => model.ISBN_NO)
+            </dt>
+            <dd class="col-sm-6">
+                @Html.DisplayFor(model => model.ISBN_NO)
+            </dd>
+            <dt class="col-sm-6">
+                @Html.DisplayNameFor(model => model.publish_year)
+            </dt>
+            <dd class="col-sm-6">
+                @Html.DisplayFor(model => model.publish_year)
+            </dd>
+            <dt class="col-sm-6">
+                @Html.DisplayNameFor(model => model.author)
+            </dt>
+            <dd class="col-sm-6">
+                @Html.DisplayFor(model => model.author)
+            </dd>
+
+        </dl>
+    </div>
+    <div class="col-md-6">
+        <img src ="https://images.unsplash.com/photo-1594312915251-48db9280c8f1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MTl8fHxlbnwwfHx8fA%3D%3D&w=1000&q=80" style="border-radius : 10px; width: 100%; height: auto;" />
+    </div>
+
+</div>
+
+
+<div>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    <a asp-action="Index">Back to List</a>
+</div>

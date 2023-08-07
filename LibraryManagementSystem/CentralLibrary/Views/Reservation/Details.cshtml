@@ -1,0 +1,46 @@
+﻿@model CentralLibrary.Models.Reservation
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Reservation Details</h1>
+<hr />
+
+<div class="row">
+    <div class="col-md-6">
+        <dl class="row">
+            <dt class="col-sm-6">
+                @Html.DisplayNameFor(model => model.Reservation_id)
+            </dt>
+            <dd class="col-sm-6">
+                @Html.DisplayFor(model => model.Reservation_id)
+            </dd>
+            <dt class="col-sm-6">
+                @Html.DisplayNameFor(model => model.Book_id)
+            </dt>
+            <dd class="col-sm-6">
+                @Html.DisplayFor(model => model.Book_id)
+            </dd>
+            <dt class="col-sm-6">
+                @Html.DisplayNameFor(model => model.Card_id)
+            </dt>
+            <dd class="col-sm-6">
+                @Html.DisplayFor(model => model.Card_id)
+            </dd>
+            <dt class="col-sm-6">
+                @Html.DisplayNameFor(model => model.Reservation_date)
+            </dt>
+            <dd class="col-sm-6">
+                @Html.DisplayFor(model => model.Reservation_date)
+            </dd>
+        </dl>
+    </div>
+    <div class="col-md-6">
+        <img src="https://www.pueblolibrary.org/sites/default/files/styles/large/public/ebookshelves.png?itok=8KO6nbLj" style="border-radius : 10px; width: 100%; height: auto;" />
+    </div>
+    <div>
+        @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+        <a asp-action="Index">Back to List</a>
+    </div>
+</div>

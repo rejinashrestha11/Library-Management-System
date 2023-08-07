@@ -1,0 +1,49 @@
+﻿@model IEnumerable<CentralLibrary.Models.Reservation>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-dark">Make Reservation</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Book_id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Card_id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Reservation_date)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.Book_id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Card_id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Reservation_date)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Reservation_id }, new { @class = "btn btn-success" }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Reservation_id }, new { @class = "btn btn-primary" }) |
+                <a class="btn btn-danger" asp-action="delete" asp-route-id="@item.Reservation_id" onclick="return confirm('Do you really want to delete this record?')" ;>Delete</a>
+
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
